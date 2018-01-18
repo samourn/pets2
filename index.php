@@ -33,20 +33,21 @@
     );
 
 //Define a form 1(order) route
-$f3->route('GET /', function() {
+$f3->route('GET /pets/order', function() {
     $template = new Template();
     echo $template->render('views/form1.html');
 }
 );
 
 //Define a form 2(order2) route
-$f3->route('GET /pets/order2', function() {
-    echo'<h1>Form 2</h1>';
+$f3->route('POST /pets/order2', function() {
+    $template = new Template();
+    echo $template->render('views/form2.html');
 }
 );
 
 //Define a results route
-$f3->route('GET /pets/results', function() {
+$f3->route('POST /pets/results', function() {
     echo'<h1>Results</h1>';
 }
 );
