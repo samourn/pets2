@@ -1,0 +1,12 @@
+{
+  "name":"asuarezg/pets2",
+  "authors":[
+    {
+      "name":"Antonio Suarez",
+      "email":"asuarez2@mail.greenriver.edu"
+    }
+  ],
+  "require":{
+    "bcosca/fatfree-core":"dev-master"
+  }
+}
