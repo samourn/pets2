@@ -32,5 +32,24 @@
         }
     );
 
+//Define a form 1(order) route
+$f3->route('GET /', function() {
+    $template = new Template();
+    echo $template->render('views/form1.html');
+}
+);
+
+//Define a form 2(order2) route
+$f3->route('GET /pets/order2', function() {
+    echo'<h1>Form 2</h1>';
+}
+);
+
+//Define a results route
+$f3->route('GET /pets/results', function() {
+    echo'<h1>Results</h1>';
+}
+);
+
     // run fat free
     $f3->run();
