@@ -7,8 +7,8 @@
 
     // define a route using a template
     $f3->route('GET /', function() {
-            $template = new Template();
-            echo "Pets 2";
+        $template = new Template();
+        echo $template->render('views/home.html');
         }
     );
 
