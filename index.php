@@ -1,4 +1,7 @@
 <?php
+    //Start the session
+    session_start();
+
     // require autoload file
     require_once('vendor/autoload.php');
 
@@ -40,9 +43,13 @@ $f3->route('GET /pets/order', function() {
 );
 
 //Define a form 2(order2) route
-$f3->route('POST /pets/order2', function() {
+$f3->route('POST /pets/order2', function($f3, $params) {
     $template = new Template();
     echo $template->render('views/form2.html');
+
+    $f3->set('animal', $params['animal']);
+
+    $_SESSION['animal'] = $f3->get('animal');
 }
 );
 
