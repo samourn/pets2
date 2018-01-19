@@ -48,48 +48,16 @@
             echo $template->render('views/form2.html');
 
             $_SESSION['animal'] = $_POST['animal'];
-            if(isset($_POST['submit'])) {
-                if (isset($_POST['black'])) {
-                    $_SESSION['color'] == "black";
-                }
-                if (isset($_POST['white'])) {
-                    $_SESSION['color'] == "white";
-                }
-                if (isset($_POST['orange'])) {
-                    $_SESSION['color'] == "orange";
-                }
-                if (isset($_POST['purple'])) {
-                    $_SESSION['color'] == "purple";
-                }
-            }
-            print_r($params);
-            print_r($_SESSION);
-            print_r($_POST);
         }
     );
 
     //Define a results route
     $f3->route('POST /pets/results', function($f3, $params) {
             echo'<h1>Results</h1>';
-            if(isset($_POST['submit'])) {
-                if (isset($_POST['black'])) {
-                    $_SESSION['color'] == "black";
-                }
-                if (isset($_POST['white'])) {
-                    $_SESSION['color'] == "white";
-                }
-                if (isset($_POST['orange'])) {
-                    $_SESSION['color'] == "orange";
-                }
-                if (isset($_POST['purple'])) {
-                    $_SESSION['color'] == "purple";
-                }
-            }
+
+            $_SESSION['color'] = $_POST['color'];
             echo "<h3>Thank you for ordering a ".$_SESSION['color']." ".
                 $_SESSION['animal']."</h3>";
-            print_r($params);
-            print_r($_SESSION);
-            print_r($_POST);
         }
     );
 
