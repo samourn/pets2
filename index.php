@@ -35,29 +35,63 @@
         }
     );
 
-//Define a form 1(order) route
-$f3->route('GET /pets/order', function() {
-    $template = new Template();
-    echo $template->render('views/form1.html');
-}
-);
+    //Define a form 1(order) route
+    $f3->route('GET /pets/order', function($f3, $params) {
+            $template = new Template();
+            echo $template->render('views/form1.html');
+        }
+    );
 
-//Define a form 2(order2) route
-$f3->route('POST /pets/order2', function($f3, $params) {
-    $template = new Template();
-    echo $template->render('views/form2.html');
+    //Define a form 2(order2) route
+    $f3->route('POST /pets/order2', function($f3, $params) {
+            $template = new Template();
+            echo $template->render('views/form2.html');
 
-    $f3->set('animal', $params['animal']);
+            $_SESSION['animal'] = $_POST['animal'];
+            if(isset($_POST['submit'])) {
+                if (isset($_POST['black'])) {
+                    $_SESSION['color'] == "black";
+                }
+                if (isset($_POST['white'])) {
+                    $_SESSION['color'] == "white";
+                }
+                if (isset($_POST['orange'])) {
+                    $_SESSION['color'] == "orange";
+                }
+                if (isset($_POST['purple'])) {
+                    $_SESSION['color'] == "purple";
+                }
+            }
+            print_r($params);
+            print_r($_SESSION);
+            print_r($_POST);
+        }
+    );
 
-    $_SESSION['animal'] = $f3->get('animal');
-}
-);
-
-//Define a results route
-$f3->route('POST /pets/results', function() {
-    echo'<h1>Results</h1>';
-}
-);
+    //Define a results route
+    $f3->route('POST /pets/results', function($f3, $params) {
+            echo'<h1>Results</h1>';
+            if(isset($_POST['submit'])) {
+                if (isset($_POST['black'])) {
+                    $_SESSION['color'] == "black";
+                }
+                if (isset($_POST['white'])) {
+                    $_SESSION['color'] == "white";
+                }
+                if (isset($_POST['orange'])) {
+                    $_SESSION['color'] == "orange";
+                }
+                if (isset($_POST['purple'])) {
+                    $_SESSION['color'] == "purple";
+                }
+            }
+            echo "<h3>Thank you for ordering a ".$_SESSION['color']." ".
+                $_SESSION['animal']."</h3>";
+            print_r($params);
+            print_r($_SESSION);
+            print_r($_POST);
+        }
+    );
 
     // run fat free
     $f3->run();
