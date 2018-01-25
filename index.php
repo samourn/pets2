@@ -66,6 +66,10 @@
     $f3->route('GET|POST /new-pet', function($f3) {
         $template = new Template();
         echo $template->render('views/new-pet.html');
+
+        if(isset($_POST['submit'])) {
+            $color = $_POST['pet-color'];
+        }
     }
     );
 
