@@ -69,6 +69,8 @@
 
         if(isset($_POST['submit'])) {
             $color = $_POST['pet-color'];
+            include('model/validate.php');
+            $f3->set('color', $color);
         }
     }
     );
