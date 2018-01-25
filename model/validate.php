@@ -19,3 +19,5 @@ $errors = array();
 if(!validColor($color)){
     $errors['color'] = "Please enter a valid choice.";
 }
+
+$success = sizeof($errors) == 0;
