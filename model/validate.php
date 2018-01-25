@@ -13,3 +13,9 @@ function validString($string) {
         return true;
     }
 }
+
+$errors = array();
+
+if(!validColor($color)){
+    $errors['color'] = "Please enter a valid choice.";
+}
