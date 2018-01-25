@@ -7,6 +7,7 @@
 
     // create instance of base class
     $f3 = Base::instance();
+    $f3->set('colors', array('pink', 'green', 'blue'));
 
     // set debug level
     $f3->set('DEBUG', 3);
@@ -67,6 +68,8 @@
         echo $template->render('views/new-pet.html');
     }
     );
+
+
 
     // run fat free
     $f3->run();
