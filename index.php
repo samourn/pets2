@@ -61,5 +61,12 @@
         }
     );
 
+    //define a order form route
+    $f3->route('GET|POST /new-pet', function($f3) {
+        $template = new Template();
+        echo $template->render('views/new-pet.html');
+    }
+    );
+
     // run fat free
     $f3->run();
